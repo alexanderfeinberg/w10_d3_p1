@@ -1,4 +1,4 @@
-# Practice: SQLite3 CLI
+# Exercise: SQLite3 CLI
 
 Now, you will practice using the Command Line Interface (CLI) in SQLite3.
 
@@ -29,15 +29,20 @@ Exit the CLI.
 > Tip: If you can't remember the keyboard shortcut you can look again at the
 > built-in documentation to see if there is a command for exiting the CLI.
 
+<details>
+<summary>Hint</summary>
+https://sqlite.org/cli.html
+</details>
+
 ## Step 2: Run `sqlite3` to explore a database
 
 Start SQLite on a new database named __example.db__.
 
-View the tables in the database by entering the command you found in Step 1.
+<details><summary>View the tables in the database by entering the command you found in Step 1.</summary><code>.tables</code></details>
 
-View the schema of the database by entering the command you found in Step 1.
+<details><summary>View the schema of the database by entering the command you found in Step 1.</summary><code>.schema</code></details>
 
-> Think about it: Do you know why you don't find any tables or schema?
+<details><summary>Think about it: Do you know why you don't find any tables or schema?</summary>Because the database is new and no tables have been created inside of the new database.</details>
 
 Run the command `.read example.sql`. This will execute the SQL in the
 __example.sql__ file.
@@ -69,11 +74,36 @@ This should show you
 3|Yay!!!
 ```
 
-## Exit the CLI
+## Step 3: Show the column names in the results
+
+The SQLite3 CLI has configuration options that you can set, one of which is to
+show the names of each of the columns in the rows of the query result.
+
+<details><summary>Look for a command in the list of SQLite3 commands (<code>.help</code>) to turn on headers and execute it.</summary><code>.headers on</code></details>
+
+Now, you should be able to see the names of the columns for any query result
+returned in the SQLite3 CLI.
+
+Run the same query in the previous step
+
+```sql
+SELECT * FROM samples;
+```
+
+This should show you the results with the names of the columns as the first row
+
+```plaintext
+id|name
+1|You found me!
+2|Yippee!!
+3|Yay!!!
+```
+
+## Step 4: Exit the CLI
 
 Use `Ctrl+d` to exit the cli.
 
-> Tip: Now your prompt should return to normal, which probably means it ends
-> with "$".
+Now your prompt should return to normal, which probably means it ends with "$"
+or "%".
 
 Congratulations! You have successfully used the SQLite3 CLI.
